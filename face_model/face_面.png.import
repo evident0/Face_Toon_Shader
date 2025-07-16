@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://beht3dv5qsw47"
+path.s3tc="res://.godot/imported/face_面.png-01caa5f347035125cdfe5b5f2e2ba8bb.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "37f450e365b47c96203f466fe0065e8a"
+}
+
+[deps]
+
+source_file="res://face_model/face_面.png"
+dest_files=["res://.godot/imported/face_面.png-01caa5f347035125cdfe5b5f2e2ba8bb.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

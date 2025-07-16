@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnk7b4wef5sdp"]
+
+[ext_resource type="Script" uid="uid://5v6vrtwmqqrp" path="res://directional_light_3d.gd" id="1_8n7uv"]
+[ext_resource type="PackedScene" uid="uid://527ehnmuynd7" path="res://face.tscn" id="1_iapjp"]
+[ext_resource type="Shader" uid="uid://g52xrbdeywm" path="res://outline.gdshader" id="3_ayuu8"]
+
+[sub_resource type="Environment" id="Environment_8n7uv"]
+background_mode = 1
+background_color = Color(0.535156, 0.535156, 0.535156, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.679688, 0.679688, 0.679688, 1)
+glow_intensity = 2.2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ayuu8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctgmk"]
+render_priority = 0
+shader = ExtResource("3_ayuu8")
+shader_parameter/scale = 1.0
+shader_parameter/outline_spread = 2.0
+shader_parameter/_Color = Color(0.476563, 0.32051, 0.206635, 1)
+shader_parameter/_DepthNormalThreshold = -0.32
+shader_parameter/_DepthNormalThresholdScale = 4.0
+shader_parameter/_DepthThreshold = 4.6
+shader_parameter/_NormalThreshold = 2.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8n7uv"]
+material = SubResource("ShaderMaterial_ctgmk")
+
+[node name="Demo_scene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8n7uv")
+camera_attributes = SubResource("CameraAttributesPractical_ayuu8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707108, 0, -0.707106, 0, 1, 0, 0.707108, 0, 0.707106, 0, 0.682691, 1.03743)
+script = ExtResource("1_8n7uv")
+
+[node name="face" parent="." instance=ExtResource("1_iapjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.37444, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0863757, 0.273936)
+near = 0.01
+
+[node name="Outline" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.10905)
+mesh = SubResource("PlaneMesh_8n7uv")
