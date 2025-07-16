@@ -1,4 +1,5 @@
 # Godot Face Toon Shader
+![image](https://github.com/evident0/Face_Toon_Shader/blob/38f6073650f8f05a053533ec60b1cfe5408122de/face_demo.png)
 * This is an alternative to modifying face normals to achieve a similar look faster.
 * Only one additional texture is necessary.
 * You can create the texture from scratch or match your existing model's UVs to the default shadow map texture available inside the project.
